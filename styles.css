@@ -49,10 +49,59 @@ header {
     background-color: transparent;
     color: white;
     font-size: 1.25rem;
+    cursor: pointer;
+}
+
+#close-btn {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1.25rem;
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    cursor: pointer;
 }
 
 .links {
-    display: none;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    z-index: 2;
+    background-color: #111;
+    height: 100%;
+    width: 100%;
+    max-width: 250px;
+    list-style-type: none;
+    transition: all 0.4s ease;
+    padding: 20px 0;
+}
+
+.links a {
+    text-decoration: none;
+    color: lightgray;
+    display: block;
+    padding: 20px 30px;
+    letter-spacing: 1.4px;
+}
+
+.overlay {
+    position: fixed;
+    background-color: #363636ad;
+    inset: 0;
+    opacity: 0;
+    z-index: 1;
+    transition: all 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+.show-links {
+    transform: translateX(250px);
+}
+
+.overlay.active {
+    opacity: 1;
+    pointer-events: all;
 }
 
 .hero-banner {
@@ -307,7 +356,7 @@ form button {
 
 
 @media (min-width: 800px) {
-    #nav-toggle {
+    #nav-toggle, #close-btn {
         display: none;
     }
 
@@ -337,9 +386,15 @@ form button {
 
     .links {
         width: 100%;
+        max-width: 100%;
         display: flex;
         justify-content: flex-end;
         list-style-type: none;
+        position: static;
+        transform: translateX(0%);
+        background-color: transparent;
+        height: 100%;
+        margin: 0;
         /* width: 100%; */
         /* border: 1px solid red; */
 
@@ -355,6 +410,7 @@ form button {
         letter-spacing: 1.2px;
         font-weight: 600;
         font-size: 0.9rem;
+        padding: 0;
     }
 
     .hero-banner .banner-desc h1 {
