@@ -6,6 +6,8 @@ const overlay = document.querySelector(".overlay");
 
 const links = document.querySelectorAll(".links li a");
 
+const backToTopBtn = document.getElementById("back-to-top");
+
 links.forEach((link) => {
   link.addEventListener("click", () => {
     linksContainer.classList.remove("show-links");
@@ -25,3 +27,11 @@ const closeMenu = () => {
 
 overlay.addEventListener("click", closeMenu);
 closeBtn.addEventListener("click", closeMenu);
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 100) {
+    backToTopBtn.classList.add("show-back-to-top-btn");
+  } else {
+    backToTopBtn.classList.remove("show-back-to-top-btn");
+  }
+});

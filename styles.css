@@ -7,6 +7,7 @@
 html {
     font-size: 16px;
     font-family: "Open Sans", serif;
+    scroll-behavior: smooth;
 }
 
 header {
@@ -143,7 +144,8 @@ header {
 }
 
 .search-countries {
-    background-color: rgb(228, 255, 255);
+    background-color: #e9f2fa;
+
 }
 
 .section-header {
@@ -163,7 +165,7 @@ header {
     font-weight: 500;
     font-size: 1.115rem;
     font-style: italic;
-    color: #7ca2c5e0;
+    color: #111;
 }
 
 .countries-container {
@@ -352,7 +354,188 @@ form button {
 }
 
 
+.why-us-section {
+    width: 100%;
+    height: 100%;
+    background-color: #e9f2fa;
+}
 
+.why-us-container {
+    max-width: 90vw;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+
+.why-us-header {
+    padding: 50px 0 70px;
+}
+
+.why-us-header h2 {
+    font-family: "Roboto", serif;
+    font-weight: 400;
+    text-align: center;
+    font-size: 1.87rem;
+    margin-bottom: 1.5rem;
+
+}
+
+.why-us-header p {
+    font-style: italic;
+    text-align: center;
+    color: #111;
+    max-width: 320px;
+    margin: 0 auto;
+    font-size: 1.115rem;
+}
+
+.grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 1.5rem;
+}
+
+.grid .first-img {
+    height: 450px;
+    width: 100%;
+
+    grid-column: 1/-1;
+    grid-row: 1/-1;
+
+    order: 0;
+
+}
+
+.grid .second-img {
+    order: 1;
+}
+
+.grid .third-img {
+    order: 3;
+}
+
+.grid .first-text-banner {
+    order: 2;
+
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid .second-text-banner {
+    order: 4;
+    background-color: #fff;
+
+}
+
+.grid .text-banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 2rem;
+    text-align: center;
+}
+
+.grid .text-banner h2 {
+    font-family: "Roboto", serif;
+    font-weight: 400;
+    font-size: 1.45rem;
+    letter-spacing: 1.1px;
+    color: #111111;
+    margin: 1.35rem 0;
+}
+
+.grid .text-banner p {
+    font-style: italic;
+    color: #111;
+    font-size: 0.90rem;
+    max-width: 320px;
+}
+
+.grid .text-banner .fa-solid {
+    color: #111111;
+    font-size: 2rem;
+}
+
+.grid .first-img img {
+    object-position: 40%;
+}
+
+.grid div:not(.first-img) {
+    width: 100%;
+    height: 250px;
+}
+
+.footer-section {
+    background-color: #292e33;
+    color: white;
+}
+
+.footer-contents {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.footer-contents #logo {
+    text-decoration: none;
+    color: white;
+    font-family: "Roboto", serif;
+    font-size: 1.85rem;
+
+}
+
+.footer-contents .social-media-icons {
+    margin: 30px 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-contents p {
+    font-style: italic;
+}
+
+.footer-contents .footer-para {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.footer-contents .copyright-text {
+    font-size: 0.75rem;
+    color: lightgray;
+    margin-top: 15px;
+}
+
+
+#back-to-top {
+    position: fixed;
+    right: 30px;
+    bottom: 20px;
+    background-color: #fff;
+    color: #111;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    text-decoration: none;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+#back-to-top.show-back-to-top-btn {
+    transform: translateY(-15px);
+    opacity: 1;
+}
 
 
 @media (min-width: 800px) {
@@ -467,4 +650,70 @@ form button {
         max-width: 750px;
         padding: 0 3rem;
     }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 1.25rem;
+    }
+
+    .grid .first-img {
+        grid-column: span 2;
+        grid-row: span 2;
+        height: 100%;
+        order: 0;
+    }
+
+    .grid .second-img {
+        order: 1;
+    }
+
+    .grid .third-img {
+        order: 4;
+    }
+
+    .grid .first-text-banner {
+        order: 3;
+    }
+
+    .grid .second-text-banner {
+        order: 2;
+
+    }
+
+    .grid .first-img img {
+        object-position: center;
+    }
+
+    .grid div {
+        width: 100%;
+        height: 100%;
+    }
+
+    .grid div img {
+        object-position: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .why-us-header {
+        padding: 50px 0 70px;
+    }
+
+    .why-us-header h2 {
+        font-size: 2.35rem;
+
+    }
+
+    .why-us-header p {
+        max-width: 100%;
+    }
+
+    .footer-contents .footer-para {
+        max-width: 100%;
+
+    }
+
+
 }
