@@ -356,7 +356,7 @@ form button {
 
 
 @media (min-width: 800px) {
-    #nav-toggle, #close-btn {
+    #nav-toggle, #close-btn, .overlay {
         display: none;
     }
 
